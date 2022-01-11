@@ -6,8 +6,9 @@ fetch("/api/transaction")
     return response.json();
   })
   .then((data) => {
+    console.log("wesley data:", data);
     // save db data on global variable
-    transactions = data;
+    transactions = [...data];
 
     populateTotal();
     populateTable();
